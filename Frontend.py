@@ -17,7 +17,8 @@ listbox.pack(fill = "both", expand = True)
 
 root.title("GfG")                           #Creates a second window
 top = Toplevel()
-
+tk.Label(top, text = "TEST").pack()
+tk.Button(top, text = "TEST").pack()
 
 for file in scripts.rglob("*.txt"):
     b[file.stem] = file

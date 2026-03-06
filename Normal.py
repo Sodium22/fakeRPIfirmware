@@ -8,9 +8,3 @@ from pathlib import Path
 import Frontend
 
 
-print(Frontend.button)
-
-
-
-
-
