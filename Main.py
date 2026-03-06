@@ -48,6 +48,7 @@ while True:
 
         sAnim = random.randint(1, 3)
 
+
         if sAnim == 1:
             print(r"/\____/\ " + "\n| * - *| \n >" , Version)
 
@@ -57,6 +58,8 @@ while True:
 
         elif sAnim == 3:
             print(r"/\____/\ " + "\n| § _ §| \n >" , Version)
+
+
 
         print("\n", datetime.datetime.now(datetime.timezone.utc).astimezone().strftime("%d %B %A"))
         print("yes this is the right version the UI is only in the normal mode")

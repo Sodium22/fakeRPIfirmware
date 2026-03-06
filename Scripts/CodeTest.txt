@@ -1,1 +1,1 @@
-os.system("ipconfig")
+os.system("ipconfig /all")

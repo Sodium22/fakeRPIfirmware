@@ -3,18 +3,35 @@ import keyboard
 from tqdm import tqdm
 from tkinter import *
 import tkinter as tk
+import glob
+import os
+from pathlib import Path
+
+"""main = Path(__file__).parent
+scripts = main / "Scripts"
+b = {}
+
+root = tk.Tk()
+listbox = tk.Listbox(root)
+listbox.pack(fill="both", expand=True)
+
+for file in scripts.rglob('*.txt'):
+    b[file.stem] = file
+
+    listbox.insert(tk.END, file.stem)
 
 
+def on_select(event):
+    selection = listbox.get(listbox.curselection())
+    #test = selection + ".txt"
+
+    file_path = b[selection]
+    excode = file_path.read_text()
+    exec(excode)
 
 
-
-
-
-
-
-
-
-
+listbox.bind('<<ListboxSelect>>', on_select)
+root.mainloop()"""
 
 """while True:
 
