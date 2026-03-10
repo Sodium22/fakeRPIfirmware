@@ -1,14 +1,14 @@
+"""
+important links for pyqt
+https://doc.qt.io/archives/qt-5.15/widget-classes.html#basic-widget-classes (has all widgets with short examples)
+https://www.pythonguis.com/tutorials/pyqt6-creating-your-first-window/      (full guide for the entire library)
+"""
+
 from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QMainWindow
 import time
 import sys
 
 app = QApplication(sys.argv)        #creates the instance
-
-"""window = QWidget()                  #creates a specific window
-window.show()                       #shows the window (hidden by default similar to TK)
-
-windowButton = QPushButton("Test")
-windowButton.show()"""
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -17,7 +17,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("My App")
         button = QPushButton("Press Me!")
 
-        # Set the central widget of the Window.
+        #puts the widget in the center of the window
         self.setCentralWidget(button)
 
 window = MainWindow()
