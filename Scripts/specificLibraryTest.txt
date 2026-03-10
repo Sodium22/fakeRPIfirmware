@@ -1,0 +1,4 @@
+import datetime
+
+
+print("\n", datetime.datetime.now(datetime.timezone.utc).astimezone().strftime("%d %B %A"))

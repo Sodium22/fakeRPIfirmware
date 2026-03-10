@@ -5,40 +5,63 @@ import keyboard
 from tqdm import tqdm
 from tqdm import trange
 from colorama import Fore
-import RandomTesting
-import Normal
-import Debug
 from pathlib import Path
+import subprocess
+import sys
+import threading
 
+"""
+    hardware notes
+> the main build is gonna be big (size of a laptop probably) 
+   with a remote kind of thing with a display and tiny keyboard wich will use the "laptops" hard and software
+   
 
+"""
 """
         To-Do
         -----
     - Button Control With keyboard keys                                                     < x >
     - fix progress bar to only display once and then run the rest of the program            < x >
     - help/explanation of modes (short not in detail thats for git)                         < x >    
-    - add normal and debug modes as 2 seperate scripts that can swap around with this one   <  >
+    - add normal and debug modes as 2 seperate scripts that can swap around with this one   < x >
     - add offline and updating wiki support with kiwix tools                                <  > 
-    - gui for normal mode (tk or something similar)                                         <  >
-    -tk list with all scripts and a way to execute them from tk + output and save button    <  >
-    - 
-    - 
+    - full ui for normal mode (tk or something similar)                                     <  >
+    - tk list with all scripts and a way to execute them from tk                            < x >
+    - save output button for TK and code output in TK not the console                       <  >
+    - add hibernation logic to Main, Debug and normal                                       <  >
+    - add a "go back" option to Normal and Debug to return to main at any time              < x > (?) (not tested yet, but implemented)
+    - test scripts that need specific libraries or nmap for example (with TKs list)         < x > (seem to work but nmap and similar not tested yet, just basic libraries)
+    - implement the actual debug mode with useful stuff                                     <  >
+    - switch the TK ui for customTK or another ui librarie in a newer version               <  >
+    - replace the TK ui with a PyQt6 ui                                                     <  >
+    
 """
 
 
 while True:
 
-    IntroBar = 17
+    def userleavecheck():
+        while True:
+            if keyboard.is_pressed("esc"):
+                procNormal.terminate()
+                procDebug.terminate()
+                t.sleep(.2)
+
+    T = threading.Thread(target = userleavecheck)
+    T.daemon = True
+    T.start()
+
+
+
+    IntroBar = random.randint(5, 17)
     while IntroBar != 0:
         try:
             for i in tqdm(range(IntroBar)):
                 IntroBar -= 1
-                t.sleep(0.3)
+                t.sleep(0.274)
 
         except:
             break
-
-
 
 
     while True:
@@ -86,10 +109,10 @@ while True:
 
                 elif keyboard.is_pressed("Enter"):
                     print("-" * 20)
-                    print("Debug Mode Selected \n_-_Please Wait_-_")
+                    print("Debug Mode Selected \n__ Please Wait __")
                     t.sleep(2)
-                                    # Add normal mode Logic by opening the other mode script and leaving this
-                                    # running in the background with less recources and a kind of hibernation mode to save resources
+                    procDebug = subprocess.Popen([sys.executable, "Debug.py"])   #add hibernation logic
+
                     break
 
                 elif timer == 0:
@@ -100,14 +123,15 @@ while True:
 
                 elif keyboard.is_pressed("Backspace"):
                     print("-" * 20)
-                    print("normal mode selected \n-_-Please Wait-_-")
-                    t.sleep(2)
-                                    #Add normal mode Logic by opening the other mode script and leaving this
-                                    #running in the background with less recources and a kind of hibernation mode to save resources
+                    print("normal mode selected \n-- Please Wait --")
+                    t.sleep(1.5)
+                    procNormal =  subprocess.Popen([sys.executable, "Normal.py"])  #add hibernation logic
+
+
                     break
 
                 elif timer == 0:
-                    print("*# Timeout Error #*")
+                    print("*§ Timeout Error §*")
                     t.sleep(1.5)
                     break
 

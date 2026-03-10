@@ -1,11 +1,26 @@
 import time
-import keyboard
-from tqdm import tqdm
-from tkinter import *
-import tkinter as tk
-import glob
-import os
-from pathlib import Path
+#import keyboard
+#from tqdm import tqdm
+#from tkinter import *
+#import tkinter as tk
+#import glob
+#import os
+#from pathlib import Path
+import subprocess
+import sys
+
+
+request = input("Start file 2?\n >")
+
+if request == "y":
+    proc = subprocess.Popen([sys.executable, "Frontend.py"])
+    time.sleep(.5)
+    print("Random Test")
+
+else:
+    print("Invalid or N\n Killing Script...")
+    time.sleep(1)
+
 
 """main = Path(__file__).parent
 scripts = main / "Scripts"

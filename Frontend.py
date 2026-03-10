@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import *
 from glob import glob
 from pathlib import Path
-import Normal
+
 
 
 
@@ -14,11 +14,13 @@ b = {}
 root = tk.Tk()
 listbox = tk.Listbox(root)
 listbox.pack(fill = "both", expand = True)
+input1 = tk.Entry(root)
+input1.pack(fill = "both", expand = True)
 
-root.title("GfG")                           #Creates a second window
+"""root.title("GfG")                           #Creates a second window
 top = Toplevel()
 tk.Label(top, text = "TEST").pack()
-tk.Button(top, text = "TEST").pack()
+tk.Button(top, text = "TEST").pack()"""
 
 for file in scripts.rglob("*.txt"):
     b[file.stem] = file
