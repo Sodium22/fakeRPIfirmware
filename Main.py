@@ -44,7 +44,7 @@ while True:
         while True:
             if keyboard.is_pressed("esc"):
                 procNormal.terminate()
-                procDebug.terminate()
+                #procDebug.terminate()
                 t.sleep(.2)
 
     T = threading.Thread(target = userleavecheck)
@@ -107,18 +107,7 @@ while True:
                             t.sleep(1)
                     break
 
-                elif keyboard.is_pressed("Enter"):
-                    print("-" * 20)
-                    print("Debug Mode Selected \n__ Please Wait __")
-                    t.sleep(2)
-                    procDebug = subprocess.Popen([sys.executable, "Debug.py"])   #add hibernation logic
 
-                    break
-
-                elif timer == 0:
-                    print("*# Timeout Error #*")
-                    t.sleep(1.5)
-                    break
 
 
                 elif keyboard.is_pressed("Backspace"):
@@ -134,6 +123,19 @@ while True:
                     print("*§ Timeout Error §*")
                     t.sleep(1.5)
                     break
+
+                """elif keyboard.is_pressed("Enter"):
+                                   print("-" * 20)
+                                   print("Debug Mode Selected \n__ Please Wait __")
+                                   t.sleep(2)
+                                   procDebug = subprocess.Popen([sys.executable, "Debug.py"])   #add hibernation logic
+
+                                   break
+
+                    elif timer == 0:
+                        print("*# Timeout Error #*")
+                        t.sleep(1.5)
+                        break"""
 
             except:
                 break

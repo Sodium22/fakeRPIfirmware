@@ -4,7 +4,15 @@ from tkinter import *
 from glob import glob
 from pathlib import Path
 
+"""
 
+!!!!!!!!!!!!!!!!!!!!!!!!
+
+Change from TK to PYQT-6
+
+!!!!!!!!!!!!!!!!!!!!!!!!
+
+"""
 
 
 main = Path(__file__).parent

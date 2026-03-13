@@ -34,14 +34,27 @@ time.sleep(.5)
 
 IntroBar = random.randint(7, 17)
 while IntroBar != 0:
-    try:
-        for i in tqdm(range(IntroBar)):
-            IntroBar -= 1
-            time.sleep(0.274)
+     for i in tqdm(range(IntroBar)):
+        IntroBar -= 1
+        time.sleep(0.274)
 
 
-    except:
-        print("ERROR with tqdm loading bar")
 
-procUI = subprocess.Popen([sys.executable, "Frontend.py"])
+procUI = subprocess.Popen([sys.executable, "Frontend.py"])      #loads in the ui after TQDM is finished with its task
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
