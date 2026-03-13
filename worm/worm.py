@@ -4,8 +4,8 @@ import time
 import socket
 
 #!!!!!
-import psutil
-import python-nmap
+#import psutil
+#import python-nmap
 
 
 """

@@ -48,4 +48,3 @@ def on_select(event):
 listbox.bind('<<ListboxSelect>>', on_select)
 
 root.mainloop()
-
